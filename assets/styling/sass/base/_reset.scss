@@ -1,0 +1,72 @@
+/*
+ * @Name: _reset.scss
+ * @Description: This scss file sets up specific selectors and universal selectors
+ * to their desired attributes and overrides unwanted behaviour from default attributes.
+ */
+
+/*                             Element Selectors */
+/*-----------------------------------------------*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; /*  default: content-box */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: 'arial';
+  margin: 0px;
+}
+
+form,
+ul,
+ol {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=submit],
+textarea {
+  font-family: 'arial';
+  border: none;
+  outline: none;
+}
+
+input[type=date]::-webkit-inner-spin-button  {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+button:hover,
+button:focus {
+  border:none;
+  outline: none;
+}
+
+
+/*                           Universal Selectors */
+/*-----------------------------------------------*/
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
