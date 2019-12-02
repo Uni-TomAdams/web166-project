@@ -1,0 +1,49 @@
+/*                                Generalization */
+/*-----------------------------------------------*/
+
+
+.btn {
+  width: 100%;
+  height: 40px;
+
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  font-family: "Avenir Next";
+
+  /* Styled buttons */
+
+  &__success {
+    color: $colour__secondary-1;
+    background-color: $colour__success-1;
+
+    &:hover {
+      background-color: $colour__success-1-hover;
+    }
+  }
+
+  &__error {
+    color: $colour__secondary-1;
+    background-color: $colour__success-1;
+
+    &:hover {
+      background-color: $colour__success-1-hover;
+    }
+  }
+
+  &__circular {
+    width: 80px;
+    height: 80px;
+    margin: 0px 15px 15px 0px !important;
+
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 40px;
+    background-color: #ECECEC;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

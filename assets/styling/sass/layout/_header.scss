@@ -1,0 +1,16 @@
+/*
+ * @Name: _header.scss
+ * @Description: Styles for the main header, including layout components
+ */
+
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+
+.header {
+  height: 70px;
+  @include flex_Row_Center_Main_Axis();
+
+  background-color: $colour__secondary-1;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+}

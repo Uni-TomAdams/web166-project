@@ -4,6 +4,7 @@
  * to their desired attributes and overrides unwanted behaviour from default attributes.
  */
 
+
 /*                             Element Selectors */
 /*-----------------------------------------------*/
 
@@ -16,6 +17,10 @@ body {
   box-sizing: border-box; /*  default: content-box */
 }
 
+body {
+  background-color: $colour__secondary-2;
+}
+
 h1,
 h2,
 h3,
@@ -24,7 +29,6 @@ h5,
 h6,
 p,
 a {
-  font-family: 'arial';
   margin: 0px;
 }
 
@@ -56,6 +60,8 @@ a {
 button,
 button:hover,
 button:focus {
+  padding: 0px;
+  margin: 0px;
   border:none;
   outline: none;
 }

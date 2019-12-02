@@ -1,0 +1,43 @@
+/*                                Generalization */
+/*-----------------------------------------------*/
+
+
+/* Header Selector Styling */
+.h {
+  font-family: 'Avenir Next';
+
+  /* Font Attributes */
+  &-1 {
+    font-size: 2em;
+  }
+  &-2 {
+    font-size: 1.5em;
+  }
+  &-3 {
+    font-size: 1em;
+  }
+
+  &-bold {
+    font-weight: bold;
+  }
+
+  /* Font Weight */
+  &__w {
+    font-weight: 100;
+
+    &-200 {
+      font-weight: 200;
+    }
+    &-300 {
+      font-weight: 300;
+    }
+    &-b {
+      font-weight: bold;
+    }
+  }
+
+  /* Font Colours */
+  &__c-light {
+    color: $font__colour-light;
+  }
+}

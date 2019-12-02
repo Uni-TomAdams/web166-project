@@ -1,0 +1,40 @@
+/*
+ * @Name: _mixin-grid.scss
+ * @Description: Contains all of the mixins used for the grid-layout function(s) needed for
+ * shorthand grid styling in the scss.
+ */
+
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+
+
+// @MIXIN : Grid w/ out gaps
+@mixin grid_Row_And_Column_No_Gap($row, $column) {
+  display: grid;
+  grid-template-rows: $row;
+  grid-template-columns: $column;
+}
+
+// @MIXIN : Grid used for only centering both (X, Y) positions for child elements
+@mixin grid_Center_All_Only() {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+// @MIXIN : Grid w/ column gap
+@mixin grid_Row_And_Column_With_Column_Gap($row, $column, $gap-column) {
+  display: grid;
+  grid-template-rows: $row;
+  grid-template-columns: $column;
+  grid-column-gap: $gap-column;
+}
+
+// @MIXIN : Grid w/ row gap
+@mixin grid_Row_And_Column_With_Row_Gap($row, $column, $gap-row) {
+  display: grid;
+  grid-template-rows: $row;
+  grid-template-columns: $column;
+  grid-row-gap: $gap-row;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="164px" height="136px" viewBox="0 0 164 136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>mem_btn_3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M172.713494,35.2584037 L172.713494,112.366406 C135.520837,114.888781 103.117735,134.866967 83.6311916,164.17396 L16.8582658,125.622593 C49.7800756,73.3462233 107.026972,37.9296646 172.713468,35.2584047 Z" id="path-1"></path>
+        <filter x="-4.5%" y="-3.9%" width="109.0%" height="110.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-598.000000, -449.000000)">
+        <g id="Group-5" transform="translate(267.000000, 108.000000)">
+            <g id="Group-2" transform="translate(248.000000, 0.000000)">
+                <g id="Group-Copy" transform="translate(0.000000, 43.000000)">
+                    <g id="mem_btn_3" transform="translate(85.000000, 277.000000)">
+                        <g transform="translate(94.785880, 99.716182) rotate(-120.000000) translate(-94.785880, -99.716182) ">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#20CE2B" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <text id="3" font-family="AvenirNext-Bold, Avenir Next" font-size="36" font-weight="bold" fill="#36393F">
+                            <tspan x="71" y="106">3</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

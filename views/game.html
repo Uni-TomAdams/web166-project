@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <title>166</title>
@@ -10,18 +11,92 @@
         <!-- Bootstrap CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
+        <!-- jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
         <!-- Localised CSS -->
         <link rel="stylesheet" type="text/css" href="./../assets/styling/css/stylesheet.css" />
 
         <!-- Localised JS -->
-        <script type="text/javascript" src="./../assets/scripts/game.js"></script>
+        <script type="text/javascript" src="../assets/scripts/game.js"></script>
     </head>
 
     <body>
+        <!-- START : HEADER -->
+        <div class="header">
 
+        </div>
+        <!-- END : HEADER -->
 
+        <div class="pad-20">
+            <div class="container" style="width: 900px">
+                <div class="row m__b-15">
+                    <!-- START : SCORE-BOARD -->
+                    <div class="col-5">
+                        <div class="content-box m__b-15">
+                            <h2 class="h-2 h__w-b h__c-light m__b-15">Current Game</h2>
+                            <h3 class="h-3 h__w-300 h__c-light m__b">Level: <span id="current_Level">1</span></h3>
+                            <h3 class="h-3 h__w-300 h__c-light m__b">Highest Score: <span id="current_Highest_Score">0</span></h3>
+                            <h3 class="h-3 h__w-300 h__c-light m__b">Time: <span id="current_Time_Period">00:00:00</span></h3>
+                        </div>
+                        <div class="content-box">
+                            <button id="startGameBtn" class="btn btn__success">
+                                Start Game
+                            </button>
+                        </div>
+                    </div>
+                    <!-- END : SCORE-BOARD -->
 
-        <!-- Boostrap JS -->
+                    <!-- START : GAME-BOARD -->
+                    <div class="col-7">
+                        <div class="content-box">
+                            <div class="container">
+                                <div class="row m__b-20">
+                                    <div class="col col-center">
+                                        <h1 class="h-1 h__w-b h__c-light">Memory Game</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-center">
+                                        <button id="mem_Btn_1" class="btn__circular">1</button>
+                                        <button id="mem_Btn_2" class="btn__circular">2</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-center">
+                                        <button id="mem_Btn_3" class="btn__circular">3</button>
+                                        <button id="mem_Btn_4" class="btn__circular">4</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-center">
+                                        <button id="mem_Btn_5" class="btn__circular">5</button>
+                                        <button id="mem_Btn_6" class="btn__circular">6</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START : GAME-BOARD -->
+                </div>
+
+                <!-- START : STATUS-BOARD-->
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-7">
+                        <div class="content-box">
+                            <div class="flex flex_col flex_ai-center">
+                                <h2 id="statusTitle" class="h-2 h__w-300 h__c-light">Watch the lights in</h2>
+                                <h1 id="statusCounter" class="h-1 h__c-light">3</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END : STATUS-BOARD-->
+            </div>
+        </div>
+
+        <!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

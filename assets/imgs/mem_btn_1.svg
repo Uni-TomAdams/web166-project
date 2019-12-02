@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="164px" height="137px" viewBox="0 0 164 137" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>mem_btn_1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M156.5,0.0381117495 L156.5,77.1461136 C119.307343,79.668489 86.9042413,99.6466747 67.4176975,128.953668 L0.644771666,90.4023012 C33.5665815,38.1259314 90.8134784,2.70937261 156.499974,0.0381127929 Z" id="path-1"></path>
+        <filter x="-4.5%" y="-3.9%" width="109.0%" height="110.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-597.000000, -194.000000)">
+        <g id="Group-5" transform="translate(267.000000, 108.000000)">
+            <g id="Group-2" transform="translate(248.000000, 0.000000)">
+                <g id="Group-Copy" transform="translate(0.000000, 43.000000)">
+                    <g id="mem_btn_1" transform="translate(85.000000, 45.000000)">
+                        <g>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#48D8C5" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <text id="1-copy" font-family="AvenirNext-Bold, Avenir Next" font-size="36" font-weight="bold" fill="#36393F">
+                            <tspan x="79" y="71">1</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

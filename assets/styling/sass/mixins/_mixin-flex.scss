@@ -1,0 +1,56 @@
+/*
+ * @Name: _mixin-flex.scss
+ * @Description: Contains all of the mixins used for the flex-layout function(s) needed for
+ * shorthand flex styling in the scss.
+ */
+
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+
+
+// @MIXIN : Flex - Center both (X, Y) position
+@mixin flex_Center_All() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row */
+
+// @MIXIN : Flex row - No center
+@mixin flex_Row_No_Center() {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+// @MIXIN : Flex row - center
+@mixin flex_Row_Center_Main_Axis() {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+// @MIXIN : Flex Row - Center All
+@mixin flex_Row_Center_All() {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+/* Column */
+
+// @MIXIN : Flex Column - No center
+@mixin flex_Column_No_Center() {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+// @MIXIN : Flex Column - Center All
+@mixin flex_Column_Center_All() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+}

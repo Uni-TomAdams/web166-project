@@ -1,0 +1,338 @@
+/*                                Generalization */
+/*-----------------------------------------------*/
+/*                                   Importation */
+/*-----------------------------------------------*/
+/*
+ * @Name: _variables.scss
+ * @Description: Contains all of the global-variables used in the SCSS files
+ */
+/*                                Generalization */
+/*-----------------------------------------------*/
+/*                                     COLOUR(s) */
+/*-----------------------------------------------*/
+/*                                          FONT */
+/*-----------------------------------------------*/
+/*                                Generalization */
+/*-----------------------------------------------*/
+/*                                   Importation */
+/*-----------------------------------------------*/
+/*
+ * @Name: _mixin-flex.scss
+ * @Description: Contains all of the mixins used for the flex-layout function(s) needed for
+ * shorthand flex styling in the scss.
+ */
+/*                                Generalization */
+/*-----------------------------------------------*/
+/* Row */
+/* Column */
+/*
+ * @Name: _mixin-grid.scss
+ * @Description: Contains all of the mixins used for the grid-layout function(s) needed for
+ * shorthand grid styling in the scss.
+ */
+/*                                Generalization */
+/*-----------------------------------------------*/
+/*
+ * @Name: _reset.scss
+ * @Description: This scss file sets up specific selectors and universal selectors
+ * to their desired attributes and overrides unwanted behaviour from default attributes.
+ */
+/*                             Element Selectors */
+/*-----------------------------------------------*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  /*  default: content-box */
+}
+
+body {
+  background-color: #EDEDED;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0px;
+}
+
+form,
+ul,
+ol {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=submit],
+textarea {
+  font-family: "arial";
+  border: none;
+  outline: none;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+button:hover,
+button:focus {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  outline: none;
+}
+
+/*                           Universal Selectors */
+/*-----------------------------------------------*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+/* BootStrap Helpers */
+.col-center {
+  text-align: center;
+}
+
+/*                                      Flex-Box */
+/*-----------------------------------------------*/
+.flex {
+  display: flex;
+  /* Default: flex-flow: row nowrap */
+}
+.flex_col {
+  flex-flow: column nowrap;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.flex_jc-center {
+  justify-content: center;
+}
+.flex_jc-between {
+  justify-content: space-between;
+}
+.flex_jc-evenly {
+  justify-content: space-evenly;
+}
+.flex_jc-around {
+  justify-content: space-around;
+}
+.flex_ai-center {
+  align-items: center;
+}
+.flex_ai-start {
+  align-items: flex-start;
+}
+.flex_ai-end {
+  align-items: flex-end;
+}
+
+/*                                    Positional */
+/*-----------------------------------------------*/
+.pos {
+  position: static;
+}
+.pos-rel {
+  position: relative;
+}
+
+/*                                   Importation */
+/*-----------------------------------------------*/
+/*
+ * @Name: _header.scss
+ * @Description: Styles for the main header, including layout components
+ */
+/*                                Generalization */
+/*-----------------------------------------------*/
+.header {
+  height: 70px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  background-color: #36393F;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+.content-box {
+  width: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #36393F;
+}
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+/*                                   Importation */
+/*-----------------------------------------------*/
+/*                                Generalization */
+/*-----------------------------------------------*/
+/* Header Selector Styling */
+.h {
+  font-family: "Avenir Next";
+  /* Font Attributes */
+  /* Font Weight */
+  /* Font Colours */
+}
+.h-1 {
+  font-size: 2em;
+}
+.h-2 {
+  font-size: 1.5em;
+}
+.h-3 {
+  font-size: 1em;
+}
+.h-bold {
+  font-weight: bold;
+}
+.h__w {
+  font-weight: 100;
+}
+.h__w-200 {
+  font-weight: 200;
+}
+.h__w-300 {
+  font-weight: 300;
+}
+.h__w-b {
+  font-weight: bold;
+}
+.h__c-light {
+  color: #ECECEC;
+}
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+.btn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  font-family: "Avenir Next";
+  /* Styled buttons */
+}
+.btn__success {
+  color: #36393F;
+  background-color: #2ecc71;
+}
+.btn__success:hover {
+  background-color: #44d580;
+}
+.btn__error {
+  color: #36393F;
+  background-color: #2ecc71;
+}
+.btn__error:hover {
+  background-color: #44d580;
+}
+.btn__circular {
+  width: 80px;
+  height: 80px;
+  margin: 0px 15px 15px 0px !important;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 40px;
+  background-color: #ECECEC;
+}
+.btn__circular:hover {
+  opacity: 0.9;
+}
+
+/*                                Generalization */
+/*-----------------------------------------------*/
+/*                                       Padding */
+/*-----------------------------------------------*/
+.pad {
+  padding: 5px;
+  /* Padding Bottom */
+}
+.pad-10 {
+  padding: 10px;
+}
+.pad-15 {
+  padding: 15px;
+}
+.pad-20 {
+  padding: 20px;
+}
+.pad-25 {
+  padding: 25px;
+}
+.pad__b {
+  padding-bottom: 5px;
+}
+.pad__b-10 {
+  padding-bottom: 10px;
+}
+.pad__b-15 {
+  padding-bottom: 15px;
+}
+.pad__b-20 {
+  padding-bottom: 20px;
+}
+.pad__b-25 {
+  padding-bottom: 25px;
+}
+
+/*                                        Margin */
+/*-----------------------------------------------*/
+.m {
+  margin: 5px;
+  /* Margin Bottom */
+  /* Margin Left */
+}
+.m-10 {
+  margin: 10px;
+}
+.m-15 {
+  margin: 15px;
+}
+.m-20 {
+  margin: 20px;
+}
+.m-25 {
+  margin: 25px;
+}
+.m__b {
+  margin-bottom: 5px;
+}
+.m__b-10 {
+  margin-bottom: 10px;
+}
+.m__b-15 {
+  margin-bottom: 15px;
+}
+.m__b-20 {
+  margin-bottom: 20px;
+}
+.m__b-25 {
+  margin-bottom: 25px;
+}
+
+/*# sourceMappingURL=stylesheet.css.map */
