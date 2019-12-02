@@ -118,23 +118,46 @@ function updateGameStatusBoard(statusType) {
 
     var counter = 0;
 
-    const updateStatus = setInterval(function() {
-        if(statusType == "startLightsCounter") {
+    if(statusType == "startLightsCounter") {
+
+        $("#statusTitle").text("Watch the lights in");
+        $("#statusCounter").text("3");
+
+        var x = setInterval(function() {
             $("#statusCounter").text(`${3 - counter}`);
             counter++;
 
-            if(counter == 3) clearInterval();
-        }
-        else if(statusType == "startGuessSequenceCountDown") {
+            if(counter == 4)  {
+                clearInterval(x);
+                counter = 0;
+            }
+        }, 1000)
+    }
+    else if(statusType == "startGuessSequenceCountDown") {
 
-        }
-    }, 1000)
+        $("#statusTitle").text("What is the sequence?");
+        $("#statusCounter").text("30");
+
+        var x = setInterval(function() {
+            $("#statusCounter").text(`${30 - counter}`);
+            counter++
+
+            if(counter == 31) {
+                clearInterval(x);
+                counter = 0;
+            }
+        }, 1000)
+    }
+    else {
+        console.log("[ERROR] - Invalid statusType in status board");
+    }
 }
 
 function startLevel(level) {
 
     // Start status board
     updateGameStatusBoard("startLightsCounter");
+
 }
 
 function startGame() {
