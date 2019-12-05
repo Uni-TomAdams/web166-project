@@ -6,9 +6,20 @@ let gameData = {
     currentTimePeriod: "00:00:00",
     currentLevelLightSequence: [],
     currentLevelPlayersGuess: [],
-    lightColours: ["#48D8C5", "#E7CE16", "#20CE2B", "#7133E9", "#D421FA", "#FF9D09"]
+    lightColours: ["#48D8C5", "#E7CE16", "#20CE2B", "#7133E9", "#D421FA", "#FF9D09"],
+    hueColours: [35531, 10000, 18000, 53000, 59000, 6000],
+    gameOverLightColour: 65531,
+    levelPassedLightColour: 18000
 };
 
+// Yellow 10000
+// Green 18000
+// Blue 35531
+// Purple 53000
+// Pink 59000
+// Orange 6000
+
+// Red 65531
 
 /*                                                     Helper Functions */
 /*----------------------------------------------------------------------*/
@@ -49,7 +60,7 @@ function getLightURI(lightID) {
     const lights = "/lights/";
     const URI = `${IP}${username}${lights}`;
 
-    return `${URI}${lightID}/`;
+    return `${URI}${lightID}`;
 }
 
 /*
@@ -78,12 +89,12 @@ function checkLightStatus(lightURI) {
 function turnLightOff(lightID) {
 
     // Get light URI
-    var lightURI = getLightURI(lightID);
+    const lightURI = getLightURI(lightID);
 
     // Check to see if specified light is currently active and toggle
-    if(checkLightStatus(lightURI)) {
+    if(!checkLightStatus(lightURI)) {
         $.ajax({
-            url: lightURI,
+            url: lightURI + "/state/",
             type: "PUT",
             data: JSON.stringify({"on": false})
         })
@@ -99,16 +110,15 @@ function turnLightOff(lightID) {
 function turnLightOn(lightID, colour) {
 
     // Get light URI
-    var lightURI = getLightURI(lightID);
+    const lightURI = getLightURI(lightID);
 
     // Check to see if specified light is currently active and toggle
     if(!checkLightStatus(lightURI)) {
+
         $.ajax({
-            url: lightURI,
+            url: lightURI + "/state/",
             type: "PUT",
-            hue: colour,
-            bri: 254,
-            data: JSON.stringify({"on": true})
+            data: JSON.stringify({"on": true, "hue": colour, "bri": 254})
         })
     }
 };
@@ -122,6 +132,32 @@ function turnAllLightsOff() {
     for(var i = 0; i < 6; i++) {
         turnLightOff(i + 1);
     }
+}
+
+function turnGameOverLightsOn() {
+
+    // Turn lights on
+    for(var i = 0; i < 6; i++) {
+        turnLightOn(i + 1, gameData.gameOverLightColour);
+    }
+
+    // Turn lights off
+    setTimeout(() => {
+        turnAllLightsOff();
+    }, 1000);
+}
+
+function turnPassedLevelLightsOn() {
+
+    // Turn lights on
+    for(var i = 0; i < 6; i++) {
+        turnLightOn(i + 1, gameData.levelPassedLightColour);
+    }
+
+    // Turn lights off
+    setTimeout(() => {
+        turnAllLightsOff();
+    }, 1000);
 }
 
 /*
@@ -138,13 +174,17 @@ function generateRandomLightSequenceByLevel(level) {
             let randomNumber = getRandomInteger();
 
             // Turn random light on
-            //turnLightOn(randomNumber, gameData.lightColours[randomNumber]);
+            turnLightOn(randomNumber, gameData.hueColours[randomNumber - 1]);
+
+            // Turn random light off
+            setTimeout(() => {
+                turnLightOff(randomNumber);
+            }, 1000)
 
             // Push light ID into the light sequence array
             gameData.currentLevelLightSequence.push(randomNumber);
             counter++;
 
-            console.log(randomNumber)
             // Break-point
             if(counter == (level + 1)) {
                 clearInterval(intervalClock);
@@ -280,6 +320,8 @@ function levelPassed() {
         $("#statusCounter").text("Next Level...");
         $("#currentLevel").text(gameData.level + 1);
 
+        turnPassedLevelLightsOn();
+
         // Reset needed settings
         gameData = {
             ...gameData,
@@ -305,6 +347,8 @@ function endGame() {
     setTimeout(() => {
         $("#statusTitle").text("Incorrect!");
         $("#statusCounter").text("GAME OVER");
+
+        turnGameOverLightsOn();
 
         gameData = {
             ...gameData,
@@ -348,6 +392,11 @@ $(document).ready(function() {
 
     // Hooks an onclick handler onto the 'Start Game' button
     $("#startGameBtn").click(function() {
+
+        // Ensure all lights are switched off
+        turnAllLightsOff();
+
+        // Start level
         startLevel(gameData.level);
     });
 });
