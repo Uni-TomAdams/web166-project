@@ -70,15 +70,14 @@ function getLightURI(lightID) {
 * */
 function checkLightStatus(lightURI) {
 
+    // GET light state
     $.getJSON(lightURI, function(lightData) {
-
         if(lightData["state"]["on"]) {
-
             return true
         }
 
         return false
-    })
+    });
 }
 
 /*
@@ -348,6 +347,13 @@ function endGame() {
         $("#statusTitle").text("Incorrect!");
         $("#statusCounter").text("GAME OVER");
 
+        // Update highest level and display
+        if(gameData.level > gameData.highestScore) {
+            gameData.highestScore = gameData.level;
+
+            $("#currentHighestScore").text(`${gameData.highestScore}`);
+        }
+
         turnGameOverLightsOn();
 
         gameData = {
@@ -358,6 +364,8 @@ function endGame() {
             currentLevelLightSequence: [],
             isCountDownStillActive: false,
         };
+
+        console.log(gameData)
     }, 1000);
 }
 
