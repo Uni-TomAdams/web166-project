@@ -1,15 +1,19 @@
 let gameData = {
-    level: 1,
-    highestScore: 0,
+    isGameStillActive: false,
     stopCountDownClock: false,
-    isCountDownStillActive: false,
-    currentTimePeriod: "00:00:00",
-    currentLevelLightSequence: [],
     currentLevelPlayersGuess: [],
-    lightColours: ["#48D8C5", "#E7CE16", "#20CE2B", "#7133E9", "#D421FA", "#FF9D09"],
-    hueColours: [35531, 10000, 18000, 53000, 59000, 6000],
-    gameOverLightColour: 65531,
-    levelPassedLightColour: 18000
+    currentLevelLightSequence: [],
+    colours: {
+        gameOverLightColour: 65531,
+        levelPassedLightColour: 18000,
+        hueColours: [35531, 10000, 18000, 53000, 59000, 6000],
+        lightColours: ["#48D8C5", "#E7CE16", "#20CE2B", "#7133E9", "#D421FA", "#FF9D09"],
+    },
+    gameBoard: {
+        level: 1,
+        highestScore: 0,
+        currentTimePeriod: "00:00:00",
+    }
 };
 
 // Yellow 10000
@@ -135,7 +139,7 @@ function turnAllLightsOff() {
 function turnGameOverLightsOn() {
     // Turn lights on
     for(var i = 0; i < 6; i++) {
-        turnLightOn(i + 1, gameData.gameOverLightColour);
+        turnLightOn(i + 1, gameData.colours.gameOverLightColour);
     }
 
     // Turn lights off
@@ -152,7 +156,7 @@ function turnGameOverLightsOn() {
 function turnPassedLevelLightsOn() {
     // Turn lights on
     for(var i = 0; i < 6; i++) {
-        turnLightOn(i + 1, gameData.levelPassedLightColour);
+        turnLightOn(i + 1, gameData.colours.levelPassedLightColour);
     }
 
     // Turn lights off
@@ -175,7 +179,7 @@ function generateRandomLightSequenceByLevel(level) {
             let randomNumber = getRandomInteger();
 
             // Turn random light on
-            turnLightOn(randomNumber, gameData.hueColours[randomNumber - 1]);
+            turnLightOn(randomNumber, gameData.colours.hueColours[randomNumber - 1]);
 
             // Turn random light off after 1s
             setTimeout(() => {
@@ -209,7 +213,7 @@ function generateRandomLightSequenceByLevel(level) {
 * */
 function applyLightColoursToLightButtons() {
     for(var i = 0; i < 6; i++) {
-        $(`#${i + 1}`).css("background-color", `${gameData.lightColours[i]}`);
+        $(`#${i + 1}`).css("background-color", `${gameData.colours.lightColours[i]}`);
     }
 }
 
@@ -262,16 +266,22 @@ function updateGameStatusBoard(statusType) {
 
         // Returns a promise that resolves after the counter has finished
         return new Promise(resolve => {
-            gameData.isCountDownStillActive = true;
 
             // A clock decrementing the countdown p/s
             const x = setInterval(function() {
                 $("#statusCounter").text(`${30 - counter}`);
                 counter++;
 
-                // Clear interval clock and resolve promise
-                if(counter == 31 || gameData.stopCountDownClock) {
+                // End clock if player has passed level
+                if(gameData.stopCountDownClock) {
                     clearInterval(x);
+                    resolve(true);
+                }
+
+                // End game if counter has finished
+                if(counter == 31) {
+                    clearInterval(x)
+                    endGame();
                     resolve(true);
                 }
             }, 1000)
@@ -287,26 +297,25 @@ function updateGameStatusBoard(statusType) {
 * */
 function lightButtonEventHandler(id) {
     $(`#${id}`).click(() => {
-        // Check to see if the count down clock is active
-        if(!gameData.isCountDownStillActive) return endGame();
+        if(gameData.isGameStillActive) {
+            // Append players guess to array
+            gameData.currentLevelPlayersGuess.push(id);
 
-        // Append players guess to array
-        gameData.currentLevelPlayersGuess.push(id);
-
-        // Compares generated light sequence against the players light sequence guess
-        for(var i = 0; i < gameData.currentLevelPlayersGuess.length; i++) {
-            if(gameData.currentLevelLightSequence[i] != gameData.currentLevelPlayersGuess[i]) {
-                gameData.stopCountDownClock = true;
-                return endGame();
+            // Compares generated light sequence against the players light sequence guess
+            for(var i = 0; i < gameData.currentLevelPlayersGuess.length; i++) {
+                if(gameData.currentLevelLightSequence[i] != gameData.currentLevelPlayersGuess[i]) {
+                    gameData.stopCountDownClock = true;
+                    return endGame();
+                }
             }
+
+            // Checks to see if the generated sequence size is the same size as number of player guesses
+            if(gameData.currentLevelLightSequence.length != gameData.currentLevelPlayersGuess.length) return;
+
+            // Start next level...
+            gameData.stopCountDownClock = true;
+            levelPassed();
         }
-
-        // Checks to see if the generated sequence size is the same size as number of player guesses
-        if(gameData.currentLevelLightSequence.length != gameData.currentLevelPlayersGuess.length) return;
-
-        // Start next level...
-        gameData.stopCountDownClock = true;
-        levelPassed();
     });
 }
 
@@ -320,22 +329,31 @@ function levelPassed() {
         // Inform player of level passed
         $("#statusTitle").text("Correct!");
         $("#statusCounter").text("Next Level...");
-        $("#currentLevel").text(gameData.level + 1);
-
+        $("#currentLevel").text(gameData.gameBoard.level + 1);
         turnPassedLevelLightsOn();
 
-        // Reset data
+        // Disable light buttons
+        disableLightButtons(true);
+
+        console.log(gameData);
+
+        // Update data
         gameData = {
             ...gameData,
-            level: gameData.level + 1,
+            gameBoard: {
+                ...gameData.gameBoard,
+                level: gameData.gameBoard.level + 1,
+            },
             stopCountDownClock: false,
             currentLevelPlayersGuess: [],
             currentLevelLightSequence: [],
-            isCountDownStillActive: false,
         };
 
+        console.log(gameData);
+
+        // Start next level
         setTimeout(function() {
-            startLevel(gameData.level);
+            startLevel(gameData.gameBoard.level);
         }, 3000);
     }, 1000);
 }
@@ -354,20 +372,23 @@ function endGame() {
         turnGameOverLightsOn();
 
         // Update highest level and display
-        if(gameData.level > gameData.highestScore) {
-            gameData.highestScore = gameData.level;
+        if(gameData.gameBoard.level > gameData.gameBoard.highestScore) {
+            gameData.gameBoard.highestScore = gameData.gameBoard.level;
 
-            $("#currentHighestScore").text(`${gameData.highestScore}`);
+            $("#currentHighestScore").text(`${gameData.gameBoard.highestScore}`);
         }
 
         // Reset data
         gameData = {
             ...gameData,
-            level: 1,
+            gameBoard: {
+                ...gameData.gameBoard,
+                level: 1
+            },
+            isGameStillActive: false,
             stopCountDownClock: false,
             currentLevelPlayersGuess: [],
             currentLevelLightSequence: [],
-            isCountDownStillActive: false,
         };
 
         console.log(gameData)
@@ -414,7 +435,8 @@ $(document).ready(function() {
         turnAllLightsOff();
 
         // Start level
-        startLevel(gameData.level);
+        gameData.isGameStillActive = true;
+        startLevel(gameData.gameBoard.level);
     });
 });
 
