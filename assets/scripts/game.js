@@ -350,6 +350,7 @@ function endGame() {
         // Inform player of game end
         $("#statusTitle").text("Incorrect!");
         $("#statusCounter").text("GAME OVER");
+        $("#currentLevel").text(1);
         turnGameOverLightsOn();
 
         // Update highest level and display
