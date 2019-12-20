@@ -239,7 +239,6 @@ button:focus {
   cursor: pointer;
   font-weight: bold;
   border-radius: 4px;
-  font-family: "Avenir Next";
   /* Styled buttons */
 }
 .btn__success {
