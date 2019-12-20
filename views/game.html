@@ -2,32 +2,49 @@
 
 <html lang="en">
     <head>
-        <title>166</title>
-
         <!-- METADATA -->
+        <title>166</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Bootstrap CDN -->
+        <!-- Stylesheets -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-
-        <!-- jQuery CDN -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-        <!-- Localised CSS -->
         <link rel="stylesheet" type="text/css" href="./../assets/styling/css/stylesheet.css" />
 
-        <!-- Localised JS -->
+        <!-- JS -->
+        <script src="https://kit.fontawesome.com/15e4f27b0e.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="../assets/scripts/game.js"></script>
+        <script type="text/javascript" src="../assets/scripts/sidebar.js"></script>
     </head>
 
     <body>
         <!-- START : HEADER -->
         <div class="header">
-
+            <button id="sidebarOpen" class="sidebar-open">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
         </div>
         <!-- END : HEADER -->
+        <!-- START : SIDEBAR -->
+        <div id="sidebarBackdrop" class="backdrop">
+            <div id="sidebar" class="sidebar">
+                <div class="flex flex_jc-end">
+                    <div>
+                        <button id="sidebarClose" class="sidebar-close">
+                            <i class="fas fa-arrow-left fa-2x"></i>
+                        </button>
+                    </div>
+                    <div>
 
+                    </div>
+                    <div>
+                        <a></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END : SIDEBAR -->
         <div class="pad-20">
             <div class="container" style="width: 900px">
                 <div class="row m__b-15">
