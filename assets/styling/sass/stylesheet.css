@@ -239,7 +239,6 @@ button:focus {
   cursor: pointer;
   font-weight: bold;
   border-radius: 4px;
-  font-family: "Avenir Next";
   /* Styled buttons */
 }
 .btn__success {
@@ -356,7 +355,7 @@ button:focus {
   width: 300px;
   height: 100%;
   z-index: 1000;
-  padding: 30px;
+  padding: 20px;
   background-color: #36393F;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -369,6 +368,28 @@ button:focus {
   cursor: pointer;
   color: #EDEDED;
   background-color: #36393F;
+}
+.sidebar-link {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  padding: 0px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.15em;
+  color: #EDEDED;
+  text-decoration: none !important;
+  background-color: #303030;
+}
+.sidebar-link:hover {
+  color: #EDEDED;
+  background-color: #262626 !important;
+}
+.sidebar-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  background-color: coral;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

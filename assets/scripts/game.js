@@ -184,7 +184,9 @@ function generateRandomLightSequenceByLevel(level) {
             // Turn random light off after 1s
             setTimeout(() => {
                 turnLightOff(randomNumber);
-            }, 1000)
+            }, 1000);
+
+            console.log(randomNumber);
 
             // Push light ID into the light sequence array
             gameData.currentLevelLightSequence.push(randomNumber);
