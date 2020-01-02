@@ -191,6 +191,31 @@ button:focus {
 
 /*                                Generalization */
 /*-----------------------------------------------*/
+.sphere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  border-radius: 100px;
+  background-color: #36393F;
+}
+.sphere-1 {
+  width: 40px;
+  height: 40px;
+}
+.sphere-2 {
+  width: 60px;
+  height: 60px;
+}
+.sphere-3 {
+  width: 80px;
+  height: 80px;
+}
+.sphere-4 {
+  width: 100px;
+  height: 100px;
+}
+
 /*                                   Importation */
 /*-----------------------------------------------*/
 /*                                Generalization */
@@ -200,6 +225,7 @@ button:focus {
   font-family: "Avenir Next";
   /* Font Attributes */
   /* Font Weight */
+  /* Font Alignment */
   /* Font Colours */
 }
 .h-1 {
@@ -225,6 +251,9 @@ button:focus {
 }
 .h__w-b {
   font-weight: bold;
+}
+.h__ali-center {
+  text-align: center;
 }
 .h__c-light {
   color: #ECECEC;
@@ -308,6 +337,7 @@ button:focus {
 /*-----------------------------------------------*/
 .m {
   margin: 5px;
+  /* Margin Right */
   /* Margin Bottom */
   /* Margin Left */
 }
@@ -323,6 +353,21 @@ button:focus {
 .m-25 {
   margin: 25px;
 }
+.m__r {
+  margin-right: 5px;
+}
+.m__r-10 {
+  margin-right: 10px;
+}
+.m__r-15 {
+  margin-right: 15px;
+}
+.m__r-20 {
+  margin-right: 20px;
+}
+.m__r-25 {
+  margin-right: 25px;
+}
 .m__b {
   margin-bottom: 5px;
 }
@@ -337,6 +382,21 @@ button:focus {
 }
 .m__b-25 {
   margin-bottom: 25px;
+}
+.m__l {
+  margin-left: 5px;
+}
+.m__l-10 {
+  margin-left: 10px;
+}
+.m__l-15 {
+  margin-left: 15px;
+}
+.m__l-20 {
+  margin-left: 20px;
+}
+.m__l-25 {
+  margin-left: 25px;
 }
 
 /*                                Generalization */

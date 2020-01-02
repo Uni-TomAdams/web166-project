@@ -2,6 +2,28 @@
 /*-----------------------------------------------*/
 
 
+.sphere {
+    @include flex_Column_Center_All();
+    border-radius: 100px;
+    background-color: $colour__secondary-1;
+
+    &-1 {
+        width: 40px;
+        height: 40px;
+    }
+    &-2 {
+        width: 60px;
+        height: 60px;
+    }
+    &-3 {
+        width: 80px;
+        height: 80px;
+    }
+    &-4 {
+        width: 100px;
+        height: 100px;
+    }
+}
 /*                                   Importation */
 /*-----------------------------------------------*/
 

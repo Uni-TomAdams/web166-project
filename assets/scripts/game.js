@@ -192,8 +192,6 @@ function generateRandomLightSequenceByLevel(level) {
             gameData.currentLevelLightSequence.push(randomNumber);
             counter++;
 
-            console.log(randomNumber);
-
             // Break-point
             if(counter == (level + 1)) {
                 clearInterval(intervalClock);
@@ -337,8 +335,6 @@ function levelPassed() {
         // Disable light buttons
         disableLightButtons(true);
 
-        console.log(gameData);
-
         // Update data
         gameData = {
             ...gameData,
@@ -350,8 +346,6 @@ function levelPassed() {
             currentLevelPlayersGuess: [],
             currentLevelLightSequence: [],
         };
-
-        console.log(gameData);
 
         // Start next level
         setTimeout(function() {
@@ -393,7 +387,6 @@ function endGame() {
             currentLevelLightSequence: [],
         };
 
-        console.log(gameData)
     }, 1000);
 }
 

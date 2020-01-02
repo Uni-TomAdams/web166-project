@@ -36,6 +36,14 @@
     }
   }
 
+  /* Font Alignment */
+  &__ali {
+    &-center {
+      text-align: center;
+    }
+  }
+
+
   /* Font Colours */
   &__c-light {
     color: $font__colour-light;
