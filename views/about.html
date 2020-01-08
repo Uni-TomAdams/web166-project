@@ -1,10 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata -->
+    <title>166 - About</title>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./../assets/styling/css/stylesheet.css" />
+
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/15e4f27b0e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/scripts/sidebar.js"></script>
+    <script type="text/javascript" src="../assets/scripts/about.js"></script>
+
 </head>
 <body>
+    <!-- START : HEADER -->
+    <div class="header">
+        <button id="sidebarOpen" class="sidebar-open">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
+    </div>
+    <!-- END : HEADER -->
+    <!-- START : SIDEBAR -->
+    <div id="sidebarBackdrop" class="backdrop">
+        <div id="sidebar" class="sidebar">
+            <div class="container-fluid">
+                <div class="row flex_jc-end m__b-15">
+                    <button id="sidebarClose" class="sidebar-close">
+                        <i class="fas fa-arrow-left fa-2x"></i>
+                    </button>
+                </div>
+                <div class="row flex_jc-center m__b-15">
+                    <img src="./../assets/imgs/profile.jpg" class="sidebar-img m__b-15">
+                    <h1 class="h-1 h-bold h__c-light">Tom Adams</h1>
+                </div>
+                <div class="row">
+                    <a rel="home page" href="./../index.html" class="flex_ai-center sidebar-link m__b-10">Home</a>
+                    <a rel="about page" href="./about.html" class="flex_ai-center sidebar-link m__b-10">About</a>
+                    <a rel="illustration page" href="./illustration.html" class="flex_ai-center sidebar-link m__b-10">Illustration</a>
+                    <a rel="game page" href="./game.html" class="flex_ai-center sidebar-link">Game</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END : SIDEBAR -->
 
+    <!-- START : CONTENT -->
+    <div class="container-fluid flex flex-center pad-20">
+        <div style="width: 700px;">
+            <div class="row content-header">
+                <div class="col flex flex_ai-center">
+                    <img src="./../assets/imgs/profile_picture.jpg" class="img img-circular m__r-20">
+                    <div class="flex flex_col">
+                        <h1 class="h-1 h__c-light">Thomas Adams</h1>
+                        <h3 class="h-3 h__c-light">BSc. Computer Science</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pad__reset">
+                    <button id="btnAbout" class="btn__row" type="button">About</button>
+                </div>
+                <div class="col-4 pad__reset">
+                    <button id="btnEducation"  class="btn__row" type="button">Education</button>
+                </div>
+                <div class="col-4 pad__reset">
+                    <button id="btnInterests" class="btn__row" type="button">Interests</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col pad__reset">
+                    <div class="content-about">
+                        <h1 id="aboutTitle" class="h-1 m__b-15"></h1>
+                        <p id="aboutContent"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -24,6 +24,15 @@
         height: 100px;
     }
 }
+
+.img {
+    width: 75px;
+    height: 75px;
+
+    &-circular {
+        border-radius: 200px;
+    }
+}
 /*                                   Importation */
 /*-----------------------------------------------*/
 

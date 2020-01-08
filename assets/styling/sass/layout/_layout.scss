@@ -62,7 +62,6 @@
 /*                                    Positional */
 /*-----------------------------------------------*/
 
-
 .pos {
   position: static;
 
@@ -78,3 +77,4 @@
 
 @import '_header.scss';
 @import '_box.scss';
+@import '_breakpoints.scss';
