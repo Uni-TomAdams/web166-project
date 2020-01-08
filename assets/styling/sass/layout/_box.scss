@@ -17,6 +17,14 @@
   background-color: $colour__secondary-3;
 }
 
+.content-backdrop {
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0, 0.5);
+}
+
 .content-header {
   padding: 20px;
   border-radius: 4px 4px 0px 0px;
