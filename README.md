@@ -25,6 +25,11 @@ The game page is where the the player will interact with the Hue lights by watch
 - Game-status board: Informs the player about their current level sesssions time, and their status.
 - Status-checking: Each light button pressed will invoke a checking feature that checks to see if the player has passsed or failed.
 
+## Youtube Video: Application Overview
+You can also watch this simple youtube video of the application, demonstrating the navigation across pages and some of the functionality built-in the site:
+
+https://youtu.be/NIBlizDuMQ8
+
 ## Browser Compatibility
 This project also provides compatibility across multiple different browsers, such as Firefox and Chrome. You can see below, a few examples of Chrome and Firefox comparisons:
 
@@ -43,4 +48,11 @@ This project also provides compatibility across multiple different browsers, suc
 
 #### Firefox
 <img width="1280" alt="Screenshot 2020-01-09 at 02 48 49" src="https://user-images.githubusercontent.com/57765615/72033750-1c9b3c80-328b-11ea-86a4-ac11a2e9ba9e.png">
+
+## Web Accessibility
+The application itself could have done more in providing better web accessibility options for those with disabilities or impairments, though there are areas on the site, such as on the game page that keeps the tabbing functionality on buttons and also on images, the alt tags are used to present a textual representation of what the image is showing. As you can see below:
+
+<img width="1280" alt="Screenshot 2020-01-09 at 03 19 29" src="https://user-images.githubusercontent.com/57765615/72035156-faa3b900-328e-11ea-9a20-19613762fb13.png">
+You can see the 'Start Game' button still keeps its outlining to indicate to a user where they are, and they can use tabbing to click the button also.
+
 
