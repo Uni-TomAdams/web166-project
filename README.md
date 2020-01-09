@@ -55,4 +55,27 @@ The application itself could have done more in providing better web accessibilit
 <img width="1280" alt="Screenshot 2020-01-09 at 03 19 29" src="https://user-images.githubusercontent.com/57765615/72035156-faa3b900-328e-11ea-9a20-19613762fb13.png">
 You can see the 'Start Game' button still keeps its outlining to indicate to a user where they are, and they can use tabbing to click the button also.
 
+## Credits
+Credits to those images and frameworks / libraries used to create this project. 
+
+### Images
+https://carloscds.net/wp-content/uploads/2017/07/computer-codding-coding-programing.jpg
+
+https://www.japan-guide.com/g18/6933_01.jpg
+
+https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_761,q_75,w_1903/v1/clients/estespark/5e41e3c7_3174_472a_b85c_ffe35dc7250f_bccff069-05e4-4991-81a5-764ca41e10ad.jpg
+
+https://i.udemycdn.com/course/750x422/1346834_b897.jpg
+
+### Frameworks / Libraries
+https://jquery.com/
+
+https://getbootstrap.com/
+
+
+
+
+
+
+
 
