@@ -1,4 +1,9 @@
 # Web166 - Main Project
+
+## Downloadable
+You can download the project by following this link:
+https://github.com/Uni-TomAdams/web166-project/archive/master.zip
+
 ## Application Factsheet
 This web-development project was based on creating a memory game, alongside the home, about and illustration pages.
 In order to use this application, download the source code and open the index.html file in a browser, preferably in
